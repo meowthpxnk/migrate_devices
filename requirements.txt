@@ -1,0 +1,13 @@
+certifi==2024.8.30
+charset-normalizer==3.4.0
+colorama==0.4.6
+idna==3.10
+MeowthLogger==2.5.1
+python-benedict==0.34.0
+python-dotenv==1.0.1
+python-fsutil==0.14.1
+python-slugify==8.0.4
+PyYAML==6.0.2
+requests==2.32.3
+text-unidecode==1.3
+urllib3==2.2.3

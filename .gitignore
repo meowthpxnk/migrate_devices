@@ -1,0 +1,7 @@
+.env
+MIGRATE_DATA
+data*.txt
+env
+logs
+.vscode
+__pycache__
