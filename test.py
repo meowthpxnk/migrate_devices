@@ -1,3 +1,3 @@
-from run import get_connector_servers
+from src import migrate_auth
 
-print(get_connector_servers())
+migrate_auth()

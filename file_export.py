@@ -32,7 +32,7 @@ def tarise(phone):
     m_phone_path = f"{m_path}/{phone}"
     m_tmp_path = f"{m_phone_path}/tmp"
 
-    curr_path = f"{root_path}/users"
+    curr_path = f"{root_path}/users/{phone}"
 
     copy_auth_name = "file_auth"
     copy_settings_name = "clicker_settings.yaml"
@@ -53,11 +53,12 @@ def tarise(phone):
 
     def copy(items):
         for item in items:
-            cli.execute(f"cp -r {curr_path}/{item} {m_tmp_path}/{item}")
+            command = f"cp -r {curr_path}/{item} {m_tmp_path}/{item}"
+            cli.execute(command)
 
     def taritase(items):
 
-        command = f"tar -czpf {tar_path}" + " ".join(
+        command = f"tar -czpf {tar_path} " + " ".join(
             [f"-C {m_tmp_path} {item}" for item in items]
         )
         cli.execute(command)
@@ -81,13 +82,14 @@ def tarise(phone):
     sftp = cli.client.open_sftp()
     sftp.get(tar_path, migrate_tar_path)
     sftp.close()
+    cli.execute(f"rm -rf {m_phone_path}")
 
     with tarfile.open(migrate_tar_path, "r:gz") as tar:
         tar.extractall(path=migrate_folder_path)
 
-    os.remove(migrate_tar_path)
     cli.execute(f"rm -rf {m_phone_path}")
     logger.info(f"Copied {phone} auth folder")
+    os.remove(migrate_tar_path)
 
 
 def migrate_auth():
