@@ -6,7 +6,7 @@ from MeowthLogger import Logger
 import requests
 import traceback
 
-logger = Logger(logger_level="INFO", use_uvicorn=True)
+logger = Logger(logger_level="INFO", use_uvicorn=True, use_files=False)
 
 load_dotenv()
 
@@ -16,9 +16,15 @@ PHONES_FOLDER = os.getenv("PHONES_FOLDER")
 MIGRATE_FOLDER_PATH = os.getenv("MIGRATE_FOLDER_PATH")
 CLICKER_IMAGE = os.getenv("CLICKER_IMAGE")
 CONNECTOR_URL = os.getenv("CONNECTOR_URL")
-
 API_KEY = os.getenv("API_KEY")
 
+
+SSH_USERNAME = os.getenv("SSH_USERNAME")
+SSH_PORT = int(os.getenv("SSH_PORT"))
+SSH_SUDO_PASS = os.getenv("SSH_SUDO_PASS")
+SSH_IP = os.getenv("SSH_IP")
+
+SERVER_MAP_PATH = os.getenv("SERVER_MAP_PATH")
 
 PHONES_SETTINGS_FILE_NAME = "clicker_settings.yaml"
 
