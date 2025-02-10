@@ -8,7 +8,7 @@ from run import (
     SSH_SUDO_PASS,
     SSH_USERNAME,
     SSH_IP,
-    MIGRATE_FOLDER_PATH,
+    PHONES_FOLDER,
     logger,
     read_phones,
 )
@@ -40,8 +40,8 @@ def tarise(phone):
     tar_name = f"{phone}.tar.gz"
     tar_path = f"{m_phone_path}/{tar_name}"
 
-    migrate_tar_path = f"{MIGRATE_FOLDER_PATH}/{tar_name}"
-    migrate_folder_path = f"{MIGRATE_FOLDER_PATH}/{phone}"
+    migrate_tar_path = f"{PHONES_FOLDER}/{tar_name}"
+    migrate_folder_path = f"{PHONES_FOLDER}/{phone}"
     # ---
 
     # make directories
