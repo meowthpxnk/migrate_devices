@@ -19,4 +19,4 @@ def get_clicker_server(phone):
     with open(SERVER_MAP_PATH) as f:
         data = json.loads(f.read())
     server = data[phone]
-    return server[SERVERS_MAP]
+    return SERVERS_MAP[server]
