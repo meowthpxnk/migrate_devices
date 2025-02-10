@@ -5,3 +5,8 @@ env
 logs
 .vscode
 __pycache__
+*.pem
+*.db
+*.gz
+*.xlsx
+*.json
