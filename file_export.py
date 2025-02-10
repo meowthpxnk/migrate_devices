@@ -62,8 +62,10 @@ def tarise(phone):
         )
         cli.execute(command)
 
-    copy(copy_auth_name, copy_settings_name)
-    taritase(copy_auth_name, copy_settings_name)
+    copied = [copy_auth_name, copy_settings_name]
+
+    copy(copied)
+    taritase(copied)
 
     cli.execute(f"chown clicker:clicker {tar_path}")
 
